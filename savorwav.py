@@ -91,9 +91,7 @@ class StdOutListener( StreamListener ):
                     self.bogo(first,last,mobile,zipCode)
                     if flag == 0:
                         if 'error' in response.keys():
-                            print "Error in keys"
                             api.send_direct_message(user=str(status[u'direct_message'][u'sender_screen_name']),text='Request Failed! Response Error: '+str(response['error']))
-                            print "After DM"
                         elif 'success' in response['data'].keys():
 				if response['data']['success']==False:
                                 	api.send_direct_message(user=str(status[u'direct_message'][u'sender_screen_name']),text='Something went wrong! Full response: '+str(response))
